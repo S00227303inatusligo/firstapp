@@ -35,6 +35,14 @@ app.get('/contacts/:id', (req,res) => {
   res.json(contacts[id]);
 })
 
+app.delete('/contact/:id',(req, res) =>
+ {
+    let id = req.params.id; 
+    console.log(`removing contact ${contact[id].name}`)
+    contact.splice(req.params.id, 1);
+    res.send(contact);
+
+  })
 
 
 
